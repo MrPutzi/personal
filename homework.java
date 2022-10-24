@@ -5,15 +5,15 @@ import java.util.Scanner;
 
 public class homework {
     public static void main(String[] args) {
-        String[] cities = new String[]{"Poprad", "Havitovo", "Washington", "Moskva", "Tokio", "Helsinki", "Tacna",
-                "Aarau", "Mainz", "Buenos Aires", "Clarkesville", "Nitra", "Bole El-Geress", "Poprad", "Havitovo"};
+        String[] cities = new String[]{"Poprad", "Kosice", "Michalovce", "Bratislava", "Zvolen", "Praha", "Tokio",
+                "New York", "Vieden", "Las Vegas"};
         String city = cities[new Random().nextInt(cities.length)];
         Scanner sc = new Scanner(System.in);
         int tries = 0;
         int maxTries = 7;
         boolean[] guessed = new boolean[city.length()];
         while (tries < maxTries) {
-            System.out.println("Guess a letter");
+            System.out.println("Hadaj pismeno");
             char letter = sc.nextLine().charAt(0);
             boolean found = false;
             for (int i = 0; i < city.length(); i++) {
@@ -32,10 +32,10 @@ public class homework {
                 }
             }
             if (win) {
-                System.out.println("You win!");
+                System.out.println("Uhadol si dalsie pismeno");
                 break;
             }
-            System.out.println("You have " + (maxTries - tries) + " tries left");
+            System.out.println("Ostava ti " + (maxTries - tries) + " pokusov");
             for (int i = 0; i < city.length(); i++) {
                 if (guessed[i]) {
                     System.out.print(city.charAt(i));
@@ -46,7 +46,7 @@ public class homework {
             System.out.println();
         }
         if (tries >= maxTries) {
-            System.out.println("You lose!");
+            System.out.println("Ak chcete pokracovat zakupte si HANGMAN PRO");
         }
 
 
